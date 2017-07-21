@@ -29,12 +29,12 @@ RUN apt-get update \
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
     && ln -sf /dev/stderr /var/log/nginx/error.log
 
-COPY docker/nginx/default /etc/nginx/sites-available/default
+COPY nginx/default /etc/nginx/sites-available/default
 
-COPY docker/php/php-fom.conf /etc/php/7.0/fpm/php-fpm.conf
+COPY php/php-fom.conf /etc/php/7.0/fpm/php-fpm.conf
 
 EXPOSE 80
 
-COPY docker/supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 CMD ["/usr/bin/supervisord"]
