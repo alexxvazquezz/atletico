@@ -5,9 +5,6 @@
     <title></title>
   </head>
   <body>
-
-    @foreach ($tasks as $task)
-      <li>{{ $task->body }}</li>
-    @endforeach
+    <h1>{{ $tasks->body }}</h1>
   </body>
 </html>
