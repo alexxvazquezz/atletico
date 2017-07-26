@@ -1,6 +1,6 @@
 <?php
 
-use App\Task;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,17 +13,6 @@ use App\Task;
 */
 
 
-Route::get('/tasks', function () {
+Route::get('tasks','TasksController@index');
 
-    $tasks = Task::all();
-
-    return view('tasks.index', compact('tasks'));
-});
-
-Route::get('/tasks/{task}', function ($id) {
-
-   $tasks = Task::find($id);
-
-
-    return view('/tasks.show', compact('tasks'));
-});
+Route::get('tasks/{tasks}', 'TasksController@show');
