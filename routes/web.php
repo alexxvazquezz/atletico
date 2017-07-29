@@ -13,6 +13,12 @@
 */
 
 
-Route::get('tasks','TasksController@index');
+Route::get('/tasks', 'TasksController@index');
+Route::get('/tasks/{tasks}','TasksController@show');
 
-Route::get('tasks/{tasks}', 'TasksController@show');
+Route::get('/','PostsController@index');
+
+// what you need
+// Contoller => PostsController
+// Eloquent Model => post
+// Migration => create_posts_table

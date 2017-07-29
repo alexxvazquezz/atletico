@@ -5,6 +5,13 @@
     <title></title>
   </head>
   <body>
-    <h1>{{ $tasks->body }}</h1>
+
+    @if ($tasks->completed == false)
+      <h1>{{ $tasks->body }}</h1>
+      <p>Task not complete. Start date: {{$tasks->created_at}}</p>
+    @else
+      <h1>{{ $tasks->body }}</h1>
+      <p>Task Complete</p>
+    @endif
   </body>
 </html>
